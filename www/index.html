@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Firechat</title>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+
+	<link rel="stylesheet" href="css/style.min.css">
+
+	<script src="https://apis.google.com/js/platform.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+
+	<script src="lib/vue/dist/vue.js"></script>
+	<script src="js/firechat.min.js"></script>
+</head>
+<body>
+
+	<div id="firechat" class="firechat">
+		<div class="chatPanel" v-if="user.displayName">
+			<div class="header">
+				<div class="username">{{user.displayName}}</div>
+			</div>
+			<div class="messages">
+				<ul>
+					<li v-for="msg in messages" track-by="key" v-bind:class="{self: (msg.uid == user.uid)}">
+						<div class="user">
+							<div class="avatar" v-bind:style="{'background-image' :'url(' + msg.user.photoURL + ')'}">
+							</div>
+						</div>
+						<div class="text">
+							{{msg.text}}
+						</div>
+						<div class="space">&nbsp;</div>
+					</li>
+				</ul>
+			</div>
+			
+			<div class="form-inline">
+				<input type="Message" v-model="messageText" class="form-control" placeholder="Message">
+				<button class="btn btn-primary" v-on:click="sendMessage()">Send</button>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>

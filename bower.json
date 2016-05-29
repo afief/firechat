@@ -1,0 +1,8 @@
+{
+  "name": "firechat",
+  "private": "true",
+  "dependencies": {
+    "vue": "^1.0.24",
+    "bootstrap": "^3.3.6"
+  }
+}

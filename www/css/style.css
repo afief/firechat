@@ -1,0 +1,50 @@
+body {
+  padding: 0px; }
+
+.messages {
+  width: 100%; }
+  .messages ul {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    list-style: none; }
+    .messages ul li {
+      padding: 10px;
+      margin: 10px 0px;
+      display: flex;
+      position: relative;
+      width: 100%; }
+      .messages ul li .user {
+        width: 50px;
+        margin: 0px 10px; }
+        .messages ul li .user .avatar {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          background-size: contain;
+          background-repeat: repeat; }
+      .messages ul li .text {
+        width: 100%;
+        background-color: white;
+        border: solid 1px #f0f0f0;
+        box-shadow: 1px 1px 5px -3px #444;
+        border-radius: 5px;
+        padding: 10px; }
+      .messages ul li .space {
+        width: 50px; }
+      .messages ul li.self {
+        flex-direction: row-reverse; }
+
+.form-inline {
+  width: 100%;
+  display: flex;
+  position: fixed;
+  bottom: 0px; }
+  .form-inline input {
+    width: 100%;
+    padding: 10px;
+    border: solid 1px #fafafa;
+    box-shadow: 1px 1px 5px -3px #444;
+    margin: 0px 5px; }
+  .form-inline button {
+    width: 100px; }
